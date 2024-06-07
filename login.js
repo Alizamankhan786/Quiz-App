@@ -5,26 +5,20 @@ const password = document.querySelector(`#password`);
 const login = document.querySelector(`#btn-1`);
 
 
-function storage(){
-    localStorage.setItem(`email`, email.value);
-    localStorage.setItem(`password`, password.value);
+let userArr;
+let userData = JSON.parse(localStorage.getItem(`user`));
 
+
+if(userData === null){
+    userArr = [];
+}else{
+    userArr=userData
 }
 
-const arr = [];
 
-login.addEventListener(`submit` , (event)=>{
+login.addEventListener(`click`, (event)=>{
     event.preventDefault()
 
-    arr.email = email.value
-    arr.password = password.value
-
-    email.value = ``
-    password.value = ``
-
-
-
-    console.log(arr);
-    storage()
-
-})
+    localStorage.setItem(`user`,JSON.stringify(userArr))
+    console.log(userArr);
+});
