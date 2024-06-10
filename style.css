@@ -54,6 +54,11 @@ html,body{
     font-style: italic;
 }
 
+#btn{
+    display: block;
+    margin: auto;
+}
+
 /* #wrapper img{
     background-image: url("https://file.forms.app/sitefile/How_to_create_quizzes_for_your_website__cover.jpg");
     width: 100%;

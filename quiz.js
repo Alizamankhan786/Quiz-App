@@ -5,13 +5,13 @@ let result = 0;
 let totalMarks = 0;
 let questionArr = [];
 
-function shuffleArray(Array){
-    for (let i = Array.length -1; i > 0 ; i--) {
+function shuffleArray(arr){
+    for (let i = arr.length -1; i > 0 ; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [Array[i] , Array[j]] = [Array[j] , Array[i]];
+        [arr[i] , arr[j]] = [arr[j] , arr[i]];
     }
 
-    return Array;
+    return arr;
 
 }
 
@@ -21,21 +21,23 @@ const renderQuestion = (arr) =>{
             ...arr[index].incorrectAnswers,
             arr[index].correctAnswers,
         ];
-    console.log(answerArr);
+    // console.log(answerArr);
         div.innerHTML += `
         <h3 class="text-light"> Q${index + 1}:  ${arr[index].question.text}</h3>
 
         <ul class="text-light">
+
         ${shuffleArray(answerArr).map((items) => `<li>
             
-            <input type="checkbox" name="choice" class="choice" id="${items} value=${items}>
+            <input type="radio" name="choice" class="choice" id="${items} value=${items}>
 
-            <label for = ${items}>${items}</label>
+            <label for = ${items}> ${items} </label>
 
             </li>`
-        )}
+        )};
         </ul>
         `;
+
     }else{
         console.log(`Show Result`);
         Window.location = "result.html";
@@ -49,11 +51,11 @@ const renderQuestion = (arr) =>{
     }
 };
 
-btn.addEventListener(`click` , ()=>{
+btn.addEventListener(`click` , () => {
     const choice = document.querySelectorAll(`.choice`);
     div.innerHTML = ``;
-    choice.forEach((item) =>{
-        if(item.checked){
+    choice.forEach((item) => {
+        if(item.checked) {
             if(item.nextSibling.innerHTML === questionArr[index].correctAnswers){
                 result += 10;
             }
@@ -80,4 +82,13 @@ const getQuestion  = async () => {
 };
 
 getQuestion();
+
+
+function next(){
+    
+    window.location = "result.html";
+}
+
+
+
 
