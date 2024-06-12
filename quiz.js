@@ -1,5 +1,12 @@
+                          // RESGISTER AND SIGN IN PAGE STARTED
+                          
+                                       //   PAGE 3
+
+
 const div = document.querySelector(`#quiz-item`);
-const btn = document.querySelector(`#btn`);
+const btn = document.querySelector(`#btn-2`);
+
+
 let index = 0;
 let result = 0;
 let totalMarks = 0;
@@ -40,7 +47,7 @@ const renderQuestion = (arr) =>{
 
     }else{
         console.log(`Show Result`);
-        Window.location = "result.html";
+        Window.location = "./result.html";
         localStorage.setItem(
             "result",
             JSON.stringify({
@@ -86,7 +93,7 @@ getQuestion();
 
 function next(){
     
-    window.location = "result.html";
+    window.location = "./result.html";
 }
 
 

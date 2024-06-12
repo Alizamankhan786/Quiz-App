@@ -59,6 +59,11 @@ html,body{
     margin: auto;
 }
 
+#burger{
+    width: 15px;
+    color: black;
+}
+
 /* #wrapper img{
     background-image: url("https://file.forms.app/sitefile/How_to_create_quizzes_for_your_website__cover.jpg");
     width: 100%;
