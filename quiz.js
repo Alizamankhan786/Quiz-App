@@ -4,7 +4,7 @@
 
 
 const div = document.querySelector(`#quiz-item`);
-const btn = document.querySelector(`#btn-2`);
+const btn = document.querySelector(`#btn`);
 
 
 let index = 0;
@@ -58,7 +58,8 @@ const renderQuestion = (arr) =>{
     }
 };
 
-btn.addEventListener(`click` , () => {
+btn.addEventListener(`click` , (event) => {
+    event.preventDefault();
     const choice = document.querySelectorAll(`.choice`);
     div.innerHTML = ``;
     choice.forEach((item) => {
